@@ -37,7 +37,9 @@
 
 			</table>
 
-			<%= render 'book_comments/comments_index' %>
+			<div id="comments_index_<%= @book.id %>">
+				<%= render 'book_comments/comments_index' %>
+			</div>
 
 			<%= form_for [@book, @book_comment] do |f| %>
 				<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
