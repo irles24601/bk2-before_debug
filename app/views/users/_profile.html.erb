@@ -13,12 +13,16 @@
 
 	<tr>
 		<th>follows</th>
-		<th><%= user.relationships.count %></th>
+		<th>
+			<a href="<%= following_user_path(user) %>"><%= user.followings.count %></a>
+		</th>
 	</tr>
 
 	<tr>
 		<th>followers</th>
-		<th><%= user.followers.count %></th>
+		<th>
+		<a href="<%= followers_user_path(user) %>"><%= user.followers.count %></a>
+		</th>
 	</tr>
 </table>
 
