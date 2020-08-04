@@ -1,8 +1,0 @@
-<p>Postal code</p>
-<%= f.text_field :postcode %>
-<p>Prefecture code</p>
-<%= f.text_field :prefecture_code, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県' %><br>
-<p>city</p>
-<%= f.text_field :address_city %>
-<p>street</p>
-<%= f.text_field :address_street %>

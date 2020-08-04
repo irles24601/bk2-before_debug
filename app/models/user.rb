@@ -18,6 +18,9 @@ class User < ApplicationRecord
   include JpPrefecture
   jp_prefecture :prefecture_code
 
+  geocoded_by :address_city
+  after_validation :geocode, if: :address_city_changed?
+
   def prefecture_name
     JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
   end

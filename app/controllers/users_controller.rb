@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image, :postcode, :prefecture_name, :address_city, :address_street)
   end
 
   def ensure_correct_user
@@ -47,9 +47,5 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-
-  def zipedit
-    params.require(:user).permit(:postcode, :prefecture_name, :address_city, :address_street)
-  end
-
+  
 end
