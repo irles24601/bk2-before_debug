@@ -3,6 +3,20 @@
 		<h2>User info</h2>
 		<%= render 'users/profile', user: @user %>
 
+		<!-- チャット機能 -->
+		<% unless @user.id == current_user.id %>
+			<% if @isRoom == true %>
+				<p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-block">チャットを始める</a>
+			<% else %>
+				<%= form_for @room do |f| %>
+					<%= fields_for @entry do |e| %>
+						<%= e.hidden_field :user_id, value: @user.id %>
+					<% end %>
+					<%= f.submit "チャットを始める", class:"btn btn-block user-show-chat"%>
+				<% end %>
+			<% end %>
+		<% end %>
+
 		<h2>New book</h2>
 		<%= render 'books/newform', book: @book %>
 	</div>
