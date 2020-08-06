@@ -73,3 +73,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'jp_prefecture'
 gem 'geocoder'
 gem 'dotenv-rails'
+gem 'whenever', require: false
