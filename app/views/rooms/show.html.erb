@@ -15,11 +15,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="posts">
-    <%= form_for @chat do |f| %>
-      <%= f.text_field :content, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
-        <%= f.hidden_field :room_id, value: @room.id %>
-          <%= f.submit "投稿",class: 'form-submit'%>
-    <% end %>
+  <div id="chat_posts">
+      <%= render "chat_posts" %>
   </div>
 </div>
