@@ -5,13 +5,15 @@
 <% end %>
 
 <hr>
-<div class="chats">
+<div class="chats" style="width: 400px;">
   <div class="chat">
     <% if @chats.present? %>
       <% @chats.each do |m| %>
-        <div class="chat-box">
-          <div class="chat-hukidashi"> <strong><%= m.content %></strong> <br></div>
-        </div>
+        <% if m.user_id == current_user.id %>
+          <p style="text-align: right;"><%= m.content %></p>
+        <% else %>
+          <p style="text-align: left;"><%= m.content %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
