@@ -14,8 +14,8 @@ set :environment, :development
 
 set :runner_command, "rails runner"
 
-# every 1.days, at: '9:00 am' do
-every 1.minutes do
+# every 1.minutes do
+every 1.days, at: '9:00 am' do
   # Rails内のメソッド実行
   runner "DailyMailer.send_mail"
 end
