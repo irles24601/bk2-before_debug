@@ -10,7 +10,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @room = Room.find(params[:id])
     if UserRoom.where(user_id: current_user.id,room_id: @room.id).present?
       @chats = @room.chats
